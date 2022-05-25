@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example with grid layout.</title>
+    <style class="text/css">
+        /* Basic - layout consturctive codes */
+        
+        body {
+            background-color: #ffeead;
+            margin: 10px;
+            height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+        
+        .container>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: #ffeead;
+        }
+        
+        .container>div:nth-child(1n) {
+            background-color: #06d6a0;
+        }
+        
+        .container>div:nth-child(3n) {
+            background-color: #118ab2;
+        }
+        
+        .container>div:nth-child(2n) {
+            background-color: #ef476f;
+        }
+        
+        .container>div:nth-child(4n) {
+            background-color: #ffd166;
+        }
+        /* end of basic layout  */
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            height: 100%;
+            grid-template-rows: 70px 1fr 120px;
+        }
+        
+        .header {
+            grid-column: 1/-1;
+            /* grid-column-start: 1;
+            grid-column-end: 3;  or -1*/
+        }
+        
+        .footer {
+            grid-column: 1/ -1;
+            /* -1 means end.        this is best practice */
+        }
+        
+        .content {
+            grid-column: 2/-1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="menu">Menu</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+
+</html>

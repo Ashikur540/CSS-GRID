@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid properties</title>
+</head>
+<style type="text/css">
+    /* Basic - layout consturctive codes */
+    
+    body {
+        background-color: #ffeead;
+        margin: 10px;
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+    
+    .container>div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        color: #ffeead;
+    }
+    
+    .container>div:nth-child(1n) {
+        background-color: #06d6a0;
+    }
+    
+    .container>div:nth-child(3n) {
+        background-color: #118ab2;
+    }
+    
+    .container>div:nth-child(2n) {
+        background-color: #ef476f;
+    }
+    
+    .container>div:nth-child(4n) {
+        background-color: #ffd166;
+    }
+    /* end of basic layout  */
+    /* ------------------------------------------------ */
+    /* start of grid layout codes */
+    
+    .container {
+        display: grid;
+        /* grid-template-columns: 200px 200px 100px; */
+        /* 3 ta column hbe.   we can apply fractional unit to make layout fully responsive  */
+        grid-template-columns: 1fr 2fr 2fr;
+        /* grid-template-rows: 100px 100px 100px 100px; */
+        grid-template-rows: 1fr 2fr 3fr;
+        /* 3 rows; */
+        grid-gap: 10px;
+        /* or 
+        grid-row-gap: 5px;
+        grid-column-gap: 5px; */
+        /*
+        we can combine those in one line by this:-- 
+        grid-template: row/column; 
+        grid-template:repeat(3,2fr)/repeat(2,2fr);  
+        that means row e 3 bar 2fr repeat hbe  => 3 ta row 2fr unit space allocate korbe 
+        that means colmn e 2 bar 2fr repeat hbe  => 2 ta column 2fr unit space allocate korbe 
+        
+        */
+    }
+</style>
+
+<body>
+    <!-- basic foundation layout for grid system -->
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+</body>
+
+</html>
